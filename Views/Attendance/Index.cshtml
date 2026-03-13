@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TrainingCentreManagementSystem.Models.Attendance>
+
+<h2>Attendance List</h2>
+
+@if (Context.Session.GetString("Role") != "Student")
+{
+    <a asp-action="Create" class="btn btn-primary">Mark Attendance</a>
+}
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Student</th>
+        <th>Batch</th>
+        <th>Date</th>
+        <th>Status</th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.StudentId</td>
+            <td>@item.BatchId</td>
+            <td>@item.Date</td>
+            <td>@item.Status</td>
+
+            @if (Context.Session.GetString("Role") != "Student")
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AttendanceId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AttendanceId">Delete</a>
+                </td>
+            }
+
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,26 @@
+﻿@model TrainingCentreManagementSystem.Models.Course
+
+<h2>Add Course</h2>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>Course Name</label>
+        <input asp-for="CourseName" class="form-control" />
+    </div>
+
+    <div>
+        <label>Duration</label>
+        <input asp-for="Duration" class="form-control" />
+    </div>
+
+    <div>
+        <label>Fee</label>
+        <input asp-for="Fee" class="form-control" />
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">Save</button>
+
+</form>

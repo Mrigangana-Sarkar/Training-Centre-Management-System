@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TrainingCentreManagementSystem.Models.Course>
+
+<h2>Course List</h2>
+
+@if (Context.Session.GetString("Role") == "Admin")
+{
+    <a asp-action="Create" class="btn btn-primary">Add Course</a>
+}
+
+<table class="table table-bordered mt-3">
+
+    <tr>
+        <th>Course Name</th>
+        <th>Duration</th>
+        <th>Fee</th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.CourseName</td>
+            <td>@item.Duration</td>
+            <td>@item.Fee</td>
+
+            @if (Context.Session.GetString("Role") == "Admin")
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
+                </td>
+            }
+
+        </tr>
+    }
+
+</table>

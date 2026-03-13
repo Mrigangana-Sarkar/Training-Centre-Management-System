@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+<h2 class="text-center mt-3 mb-4">Admin Dashboard</h2>
+
+<div class="container">
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card text-white bg-primary shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Trainers</h5>
+                    <p>Manage trainer details</p>
+                    <a href="/Trainer" class="btn btn-light">Manage Trainers</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-success shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Courses</h5>
+                    <p>Add or modify courses</p>
+                    <a href="/Course" class="btn btn-light">Manage Courses</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-warning shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Students</h5>
+                    <p>View and manage students</p>
+                    <a href="/Student" class="btn btn-light">Manage Students</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-info shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Batches</h5>
+                    <p>Create and manage batches</p>
+                    <a href="/Batch" class="btn btn-light">Manage Batches</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-dark shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Training Schedule</h5>
+                    <p>Manage training sessions</p>
+                    <a href="/Schedule" class="btn btn-light">Training Schedule</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-danger shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Attendance</h5>
+                    <p>Track attendance</p>
+                    <a href="/Attendance" class="btn btn-light">Attendance</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="text-center">
+        <a href="/Account/Logout" class="btn btn-outline-danger btn-lg">Logout</a>
+    </div>
+
+</div>

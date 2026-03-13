@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TrainingCentreManagementSystem.Models.Schedule>
+
+<h2>Training Schedule</h2>
+
+@if (Context.Session.GetString("Role") != "Student")
+{
+    <a asp-action="Create" class="btn btn-primary">Add Schedule</a>
+}
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>BatchId</th>
+        <th>Date</th>
+        <th>Topic</th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.BatchId</td>
+            <td>@item.TrainingDate</td>
+            <td>@item.Topic</td>
+
+            @if (Context.Session.GetString("Role") != "Student")
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ScheduleId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ScheduleId">Delete</a>
+                </td>
+            }
+
+        </tr>
+    }
+
+</table>

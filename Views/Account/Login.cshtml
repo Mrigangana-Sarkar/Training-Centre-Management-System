@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Training Centre Management System</h2>
+
+<!-- CREATE ADMIN BUTTON AT TOP -->
+
+<a href="/Account/CreateAdmin" class="btn btn-primary">
+    Create New Admin
+</a>
+
+<hr />
+
+<h3>Login</h3>
+
+<form method="post" asp-action="Login">
+
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Login As</label>
+
+        <select name="role" class="form-control">
+            <option value="Admin">Admin</option>
+            <option value="Trainer">Trainer</option>
+            <option value="Student">Student</option>
+        </select>
+
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">
+        Login
+    </button>
+
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p style="color:red">@ViewBag.Message</p>
+}

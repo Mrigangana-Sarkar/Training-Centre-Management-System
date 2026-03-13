@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TrainingCentreManagementSystem.Models.Trainer>
+
+<h2>Trainer List</h2>
+
+<a asp-action="Create" class="btn btn-primary">Add Trainer</a>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Specialization</th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.TrainerName</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>@item.Specialization</td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TrainerId">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.TrainerId">Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>

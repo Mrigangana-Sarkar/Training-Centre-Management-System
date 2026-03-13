@@ -1,0 +1,40 @@
+﻿@model TrainingCentreManagementSystem.Models.Student
+
+<h2>Edit Student</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="StudentId" />
+
+    <div>
+        <label>Name</label>
+        <input asp-for="StudentName" class="form-control" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <div>
+        <label>Phone</label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+
+    <div>
+        <label>Course</label>
+        <select asp-for="CourseId" class="form-control">
+
+            @foreach (var course in ViewBag.Courses)
+            {
+                <option value="@course.CourseId">@course.CourseName</option>
+            }
+
+        </select>
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">Update</button>
+
+</form>

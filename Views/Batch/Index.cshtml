@@ -1,0 +1,44 @@
+﻿@model IEnumerable<TrainingCentreManagementSystem.Models.Batch>
+
+<h2>Batch List</h2>
+
+@if (Context.Session.GetString("Role") == "Admin")
+{
+    <a asp-action="Create">Add Batch</a>
+}
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Batch Name</th>
+        <th>CourseId</th>
+        <th>TrainerId</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.BatchName</td>
+            <td>@item.CourseId</td>
+            <td>@item.TrainerId</td>
+            <td>@item.StartDate</td>
+            <td>@item.EndDate</td>
+
+            <td>
+                @if (Context.Session.GetString("Role") == "Admin")
+                {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BatchId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BatchId">Delete</a>
+                </td>
+            }
+            </td>
+
+        </tr>
+    }
+
+</table>

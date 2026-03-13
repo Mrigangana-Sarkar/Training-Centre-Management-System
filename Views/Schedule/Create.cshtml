@@ -1,0 +1,35 @@
+﻿@model TrainingCentreManagementSystem.Models.Schedule
+
+<h2>Add Schedule</h2>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>Batch</label>
+
+        <select asp-for="BatchId" class="form-control">
+
+            @foreach (var batch in ViewBag.Batches)
+            {
+                <option value="@batch.BatchId">@batch.BatchName</option>
+            }
+
+        </select>
+
+    </div>
+
+    <div>
+        <label>Training Date</label>
+        <input asp-for="TrainingDate" type="date" class="form-control" />
+    </div>
+
+    <div>
+        <label>Topic</label>
+        <input asp-for="Topic" class="form-control" />
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">Save</button>
+
+</form>
